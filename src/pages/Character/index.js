@@ -65,7 +65,7 @@ const Character = () => {
             {loading && <div>Loading...</div>}
             {error && <div>Error</div>}
             {character && 
-            <><div className="card">
+           <div className="card">
                         <h5 className="card-header">Personal Information</h5>
                         <div className="card-body">
                             <h5 className="card-title">{character.name}</h5>
@@ -73,9 +73,9 @@ const Character = () => {
                             <p className="card-text">height: {character.height}</p>
                             <p className="card-text"> mass: {character.mass}</p>
                             <p className="card-text"> hair_color: {character.hair_color}</p>
-                        </div>
-                        } </>
-                    </div>
+                        
+                       </div>  </div> }
+                  
                    <div>
                             {loading && <div>Loading...</div>}
                             {error && <div>Error</div>}
@@ -89,10 +89,10 @@ const Character = () => {
                                         <p className="card-text"> gravity: {planet.gravity}</p>
                                         <p className="card-text"> terrain: {planet.terrain}</p>
                                     </div>
-                                    }
-                                </div>
-                       </> 
-         )};
+                                    
+                                </div>}
+                </div></div>   
+         );
          
      };
       
