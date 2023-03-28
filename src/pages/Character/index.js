@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Fragment } from "react";
 import EnHancedFetch from "../../services/http";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header";
@@ -24,21 +23,17 @@ const Character = () => {
         const fetchCharacter = async () => {
             let data = getItem(`character${id}`);
 
-            if (data) {
-                setCharacter(data);
-                
-                return;
-            }
-
             try {
-                const response = await EnHancedFetch(
-                    "GET",
-                    BASE_API_URL + "people/" + id,
-                    ""
-                );
+                if (data == null) {
+                    data = await EnHancedFetch(
+                        "GET",
+                        BASE_API_URL + "people/" + id,
+                        ""
+                    );
+                }
 
-                setItem(`character${id}`, response);
-                setCharacter(response);
+                setItem(`character${id}`, data);
+                setCharacter(data);
             } catch (error) {
                 setError(true);
             } finally {
@@ -49,19 +44,18 @@ const Character = () => {
         const fetchPlanet = async () => {
             let data = getItem(`planet${id}`);
 
-            if (data) {
-                setPlanet(data);
-
-                return;
-            }
+        
             try {
-                const response = await EnHancedFetch(
-                    "GET",
-                    BASE_API_URL + "planets/" + id,
-                    ""
-                );
-                setItem(`planet${id}`, response);
-                setPlanet(response);
+                if (data == null) {
+                    data = await EnHancedFetch(
+                        "GET",
+                        BASE_API_URL + "planets/" + id,
+                        ""
+                    );
+                }
+             
+                setItem(`planet${id}`, data);
+                setPlanet(data);
             } catch (error) {
                 setError(true);
             } finally {
