@@ -1,23 +1,23 @@
-header{
+header {
     width: 100%;
     background-color: aquamarine;
     height: 64px;
     margin-top: 0;
-    
+
 }
 
-ul{
+ul {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-li{
+li {
     list-style: none;
     padding: 15px;
 }
 
-.navbar-brand{
+.navbar-brand {
     font-size: 20px;
-  margin-left: 20px;
+    margin-left: 20px;
 }
