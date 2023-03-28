@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Header from "../../components/Header";
 import Loading from "../../components/Loading";
 import Error from "../../components/Error";
-import { setItem, getItem} from "../../services/storage";
+import { setItem, getItem } from "../../services/storage";
 
 const BASE_API_URL = "https://swapi.dev/api/";
 
@@ -15,9 +15,9 @@ const Character = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const { id } = useParams();
-     
+
     let time = new Date();
-    
+
 
     useEffect(() => {
         const fetchCharacter = async () => {
@@ -44,7 +44,7 @@ const Character = () => {
         const fetchPlanet = async () => {
             let data = getItem(`planet${id}`);
 
-        
+
             try {
                 if (data == null) {
                     data = await EnHancedFetch(
@@ -53,7 +53,7 @@ const Character = () => {
                         ""
                     );
                 }
-             
+
                 setItem(`planet${id}`, data);
                 setPlanet(data);
             } catch (error) {
