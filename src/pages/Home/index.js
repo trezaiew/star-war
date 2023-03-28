@@ -6,7 +6,7 @@ import Posts from '../../components/post';
 import Pagination from '../../components/pagination';
 import Error from '../../components/Error';
 import { useParams, Navigate } from 'react-router-dom';
-import { setItem, getItem} from '../../services/storage';
+import { setItem, getItem } from '../../services/storage';
 const Home = () => {
 
   let numberPage = 1
@@ -93,7 +93,7 @@ const Home = () => {
           currentPage={currentPage}
         />
       </div>
-    
+
     </>
   );
 }
